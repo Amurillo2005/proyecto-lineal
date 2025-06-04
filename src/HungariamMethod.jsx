@@ -175,8 +175,8 @@ const HungarianMethod = () => {
             const { lines, coveredZeros } = findMinimumLinesCoverage(workMatrix);
 
             newSteps.push({
-                title: `Iteración ${iteration}: Cobertura de ceros`,
-                description: `Se necesitan ${lines.length} líneas para cubrir todos los ceros. Se requieren ${n} líneas para la solución óptima.`,
+                title: "Paso 3: Cobertura de ceros",
+                description: `Se necesitan ${lines.length} líneas para cubrir todos los ceros.`,
                 matrix: deepCopy(workMatrix),
                 lines: lines,
                 type: "line-cover"
@@ -217,7 +217,7 @@ const HungarianMethod = () => {
             }
 
             newSteps.push({
-                title: `Iteración ${iteration}: Ajuste de matriz`,
+                title: "Paso 4: Ajuste de la matriz con el número menor no cubierto",
                 description: `Restamos ${minUncovered} de elementos no cubiertos y sumamos a intersecciones de líneas`,
                 matrix: deepCopy(workMatrix),
                 type: "adjustment"
